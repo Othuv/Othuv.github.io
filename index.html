@@ -10,16 +10,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
-    <title>Hodl's Item List</title>
+    <title>Nolen's Item List</title>
     <script type="text/javascript">
         const itemListURL = "https://raw.githubusercontent.com/Othuv/Othuv.github.io/main/StoreItems.json";
         const eventListURL = "https://raw.githubusercontent.com/Othuv/Othuv.github.io/main/StoreEvents.json";
+        const testListURL = "https://raw.githubusercontent.com/Othuv/Othuv.github.io/main/StoreTest.json";
     </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">HodlHodl</a>
+        <a class="navbar-brand" href="#">Nolen Testing</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,6 +68,9 @@
                                     </button>
                                     <button class="btn btn-success" ng-class="{'active': (selected == '2')}" ng-click='selected=2'>
                                         Events
+                                    </button>
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '3')}" ng-click='selected=3'>
+                                        New Button!
                                     </button>
                                 </div>
                                 <div class="form-group row">
@@ -136,6 +140,35 @@
                                     <th scope="col" class="sort" data-sort="abr">Name</th>
                                     <th scope="col" class="sort" data-sort="price">Price</th>
                                     <th scope="col" class="sort" data-sort="karmatype">Karma</th>
+                                </tr>
+                                <tbody class="list">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show='selected == 3'>
+                    <div class="col-md-12">
+                        <div id="test">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                                </div>
+                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <p>
+                                <button type="button" class="btn btn-primary sort" data-sort="abr">
+                                    Sort
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="price">
+                                    Sort by Price
+                                </button>
+                            </p>
+                            <table class="table items">
+                                <tr>
+                                    <th scope="col" class="sort" data-sort="abr">Name</th>
+                                    <th scope="col" class="sort" data-sort="price">Price</th>
+                                    <th scope="col" class="sort" data-sort="category">Category</th>
                                 </tr>
                                 <tbody class="list">
                                 </tbody>
@@ -243,6 +276,23 @@
             eventList = new List('events', options, eventData);
         });
 
+        let itemList = null;
+        $.getJSON(testListURL, function(data) {
+            var options = {
+                valueNames: ['abr', 'price', 'category'],
+                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="category"></td></tr>'
+            };
+
+            var itemData = [];
+            $.each(data.items, function(index, value) {
+                if (value["price"] > 0) {
+                    itemData.push(value);
+                }
+            });
+
+            itemList = new List('items', options, itemData);
+        });
+
         $("#item-price-min").keyup(function() {
             updateItemFilter();
         });
@@ -275,6 +325,7 @@
                 return allow;
             });
         }
+
     </script>
     <script type="text/javascript">
         var tabs = angular.module('tabs', [])
