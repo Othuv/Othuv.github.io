@@ -536,7 +536,7 @@
 		},
 		{
 			"abr": "anchovy",
-			"price": 10,
+			"price": -10,
 			"category": "Raw fish",
 			"defname": "VCEF_RawAnchovy"
 		},
@@ -1796,7 +1796,7 @@
 		},
 		{
 			"abr": "bloodleech",
-			"price": 10,
+			"price": -10,
 			"category": "Alien raw fish",
 			"defname": "VCEF_BloodLeech"
 		},
@@ -16562,7 +16562,7 @@
 		},
 		{
 			"abr": "synth",
-			"price": 10,
+			"price": -10,
 			"category": "Animal",
 			"defname": "AvP_Synth"
 		},
