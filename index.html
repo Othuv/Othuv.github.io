@@ -14,7 +14,6 @@
     <script type="text/javascript">
         const itemListURL = "https://raw.githubusercontent.com/Othuv/Othuv.github.io/main/StoreItems.json";
         const eventListURL = "https://raw.githubusercontent.com/Othuv/Othuv.github.io/main/StoreEvents.json";
-        const testListURL = "https://raw.githubusercontent.com/Othuv/Othuv.github.io/main/StoreTest.json";
     </script>
 </head>
 
@@ -274,23 +273,6 @@
             });
 
             eventList = new List('events', options, eventData);
-        });
-
-        let itemList = null;
-        $.getJSON(testListURL, function(data) {
-            var options = {
-                valueNames: ['abr', 'price', 'category'],
-                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="category"></td></tr>'
-            };
-
-            var itemData = [];
-            $.each(data.items, function(index, value) {
-                if (value["price"] > 0) {
-                    itemData.push(value);
-                }
-            });
-
-            itemList = new List('items', options, itemData);
         });
 
         $("#item-price-min").keyup(function() {
