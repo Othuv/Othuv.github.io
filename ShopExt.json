@@ -51026,12 +51026,12 @@
         ],
         "mod": "Unknown",
         "karmaType": null,
-        "customName": false
+        "customName": true
       },
       "description": "A baseline human, mostly unmodified by gene engineering and mostly unchanged by evolutionary pressures on non-Earth planets.",
       "defName": "O21_OR_CloneTrooper",
       "enabled": true,
-      "name": "human",
+      "name": "human(clone_trooper)",
       "price": 2917
     },
     {

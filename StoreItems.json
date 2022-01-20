@@ -29143,6 +29143,12 @@
       "price": -10
     },
     {
+      "abr": "woodencanopy",
+      "category": "Furniture",
+      "defname": "WoodenCanopy",
+      "price": 104
+    },
+    {
       "abr": "zombrella",
       "category": "Misc",
       "defname": "Zombrella",
@@ -29231,6 +29237,12 @@
       "category": "Furniture",
       "defname": "CanopyGuest",
       "price": 306
+    },
+    {
+      "abr": "guestwoodencanopy",
+      "category": "Furniture",
+      "defname": "WoodenCanopyGuest",
+      "price": 104
     },
     {
       "abr": "guestteepee",
@@ -29413,5 +29425,5 @@
       "price": 658
     }
   ],
-  "total": 4902
+  "total": 4904
 }
