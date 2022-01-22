@@ -92,12 +92,12 @@
     "IsUsable": false,
     "IsEquippable": true,
     "IsWearable": true,
-    "KarmaTypeForUsing": null,
+    "KarmaTypeForUsing": "Bad",
     "KarmaTypeForWearing": null,
     "KarmaTypeForEquipping": null,
     "version": 2,
     "Mod": "RimWorld",
-    "KarmaType": null
+    "KarmaType": "Bad"
   },
   "Penoxycyline": {
     "CustomName": null,
